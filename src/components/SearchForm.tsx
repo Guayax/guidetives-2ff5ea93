@@ -30,7 +30,14 @@ const languages = [
 const interests = [
   "Historia", "Arte", "Gastronomía", "Arquitectura", "Museos",
   "Naturaleza", "Playas", "Montaña", "Vida Nocturna", "Compras",
-  "Fotografía", "Cultura Local", "Deporte", "Música", "Tradiciones"
+  "Fotografía", "Cultura Local", "Deporte", "Música", "Tradiciones",
+  "Aventura", "Senderismo", "Ciclismo", "Parques", "Jardines",
+  "Monumentos", "Iglesias", "Castillos", "Palacios", "Mercados",
+  "Festivales", "Teatro", "Cine", "Literatura", "Tecnología",
+  "Ciencia", "Espectáculos", "Baile", "Cocina", "Vinos",
+  "Cerveza", "Café", "Postres", "Artesanías", "Joyas",
+  "Moda", "Diseño", "Street Art", "Grafitis", "Barrios Históricos",
+  "Vida Local", "Familias", "Romance", "Lujo", "Turismo Sostenible"
 ];
 
 interface SearchFormProps {
