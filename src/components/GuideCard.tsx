@@ -12,6 +12,7 @@ export interface Guide {
   rating: number;
   totalReviews: number;
   location: string;
+  availableDays: string[];
   languages: string[];
   specialties: string[];
   biography: string;
@@ -186,12 +187,24 @@ export default function GuideCard({ guide, onContact }: GuideCardProps) {
         </div>
 
         {/* Idiomas */}
-        <div className="mb-6">
+        <div className="mb-4">
           <h4 className="text-sm font-medium text-foreground mb-2">Idiomas:</h4>
           <div className="flex flex-wrap gap-1">
             {guide.languages.map((language) => (
               <Badge key={language} variant="outline" className="text-xs border-primary text-primary">
                 {language}
+              </Badge>
+            ))}
+          </div>
+        </div>
+
+        {/* Días disponibles */}
+        <div className="mb-6">
+          <h4 className="text-sm font-medium text-foreground mb-2">Días disponibles:</h4>
+          <div className="flex flex-wrap gap-1">
+            {guide.availableDays.map((day) => (
+              <Badge key={day} variant="secondary" className="text-xs bg-accent text-accent-foreground">
+                {day}
               </Badge>
             ))}
           </div>
