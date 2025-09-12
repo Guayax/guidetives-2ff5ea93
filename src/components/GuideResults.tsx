@@ -906,9 +906,10 @@ export default function GuideResults({ searchData, onNewSearch }: GuideResultsPr
       }
       
       // Filtrar por intereses - debe coincidir al menos con uno
-      if (searchData.selectedInterests.length > 0) {
+      // Solo aplica el filtro si hay intereses seleccionados
+      if (searchData.selectedInterests && searchData.selectedInterests.length > 0) {
         const hasMatchingInterest = searchData.selectedInterests.some(interest =>
-          guide.specialties.some(specialty => 
+          interest && guide.specialties.some(specialty => 
             specialty.toLowerCase().includes(interest.toLowerCase()) ||
             interest.toLowerCase().includes(specialty.toLowerCase())
           )
