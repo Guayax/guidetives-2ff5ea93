@@ -63,11 +63,95 @@ const allGuides: Guide[] = [
     isVerified: true,
     yearsExperience: 4
   },
-  // Generar más guías hasta llegar a ~150
-  ...Array.from({ length: 145 }, (_, index) => {
-    const cities = ["Madrid", "Barcelona", "Sevilla", "Valencia", "Granada", "Bilbao", "Salamanca", "Toledo", "Córdoba", "Cádiz", "Málaga", "Zaragoza", "Murcia", "Palma", "Las Palmas", "Santander", "Oviedo", "Pamplona", "Vitoria", "Logroño", "Ibagué", "Guamo", "Espinal", "Melgar", "Honda"];
-    const names = ["María", "Carlos", "Ana", "Diego", "Laura", "Pedro", "Carmen", "Francisco", "Isabel", "Alejandro", "Pilar", "Manuel", "Rosa", "Antonio", "Dolores", "José", "Concepción", "Ángel", "Josefa", "Jesús"];
-    const surnames = ["García", "Rodríguez", "González", "Fernández", "López", "Martínez", "Sánchez", "Pérez", "Gómez", "Martín", "Jiménez", "Ruiz", "Hernández", "Díaz", "Moreno", "Muñoz", "Álvarez", "Romero", "Alonso", "Gutiérrez"];
+  // Generar base de datos extensa de guías (300+ perfiles)
+  ...Array.from({ length: 350 }, (_, index) => {
+    const cities = [
+      // España
+      "Madrid", "Barcelona", "Sevilla", "Valencia", "Granada", "Bilbao", "Salamanca", "Toledo", "Córdoba", "Cádiz", 
+      "Málaga", "Zaragoza", "Murcia", "Palma", "Las Palmas", "Santander", "Oviedo", "Pamplona", "Vitoria", "Logroño",
+      "Burgos", "León", "Girona", "Tarragona", "Alicante", "Vigo", "Coruña", "Santiago", "Cáceres", "Badajoz",
+      // Colombia
+      "Ibagué", "Guamo", "Espinal", "Melgar", "Honda", "Bogotá", "Medellín", "Cali", "Barranquilla", "Cartagena",
+      "Santa Marta", "Bucaramanga", "Pereira", "Manizales", "Armenia", "Cúcuta", "Villavicencio", "Pasto", "Montería",
+      // Internacional
+      "París", "Londres", "Roma", "Berlín", "Ámsterdam", "Viena", "Praga", "Budapest", "Varsovia", "Estocolmo",
+      "Lisboa", "Atenas", "Dubrovnik", "Florencia", "Venecia", "Múnich", "Zurich", "Copenhague", "Oslo", "Helsinki"
+    ];
+    
+    const names = [
+      "María", "Carlos", "Ana", "Diego", "Laura", "Pedro", "Carmen", "Francisco", "Isabel", "Alejandro",
+      "Pilar", "Manuel", "Rosa", "Antonio", "Dolores", "José", "Concepción", "Ángel", "Josefa", "Jesús",
+      "Elena", "Miguel", "Patricia", "Luis", "Cristina", "Javier", "Beatriz", "Fernando", "Raquel", "Alberto",
+      "Mónica", "Rafael", "Silvia", "Sergio", "Natalia", "Marcos", "Gloria", "Rubén", "Irene", "Pablo",
+      "Lucía", "Andrés", "Verónica", "Óscar", "Alicia", "Víctor", "Sandra", "Iván", "Nuria", "Adrián"
+    ];
+    
+    const surnames = [
+      "García", "Rodríguez", "González", "Fernández", "López", "Martínez", "Sánchez", "Pérez", "Gómez", "Martín",
+      "Jiménez", "Ruiz", "Hernández", "Díaz", "Moreno", "Muñoz", "Álvarez", "Romero", "Alonso", "Gutiérrez",
+      "Navarro", "Torres", "Domínguez", "Vázquez", "Ramos", "Gil", "Ramírez", "Serrano", "Blanco", "Molina",
+      "Morales", "Suárez", "Ortega", "Delgado", "Castro", "Ortiz", "Rubio", "Marín", "Sanz", "Iglesias"
+    ];
+    
+    const languageCombinations = [
+      ["Español"],
+      ["Español", "English"],
+      ["Español", "English", "Français"],
+      ["Español", "English", "Deutsch"],
+      ["Español", "English", "Italiano"],
+      ["Español", "English", "Português"],
+      ["Español", "Français"],
+      ["Español", "Deutsch"],
+      ["Español", "Italiano"],
+      ["Español", "English", "中文"],
+      ["Español", "English", "日本語"],
+      ["Español", "English", "Русский"],
+      ["Español", "English", "العربية"],
+      ["Español", "English", "한국어"],
+      ["Español", "Français", "Italiano"],
+      ["Español", "Deutsch", "English"],
+      ["English", "Français", "Deutsch"],
+      ["Español", "English", "Nederlands"],
+      ["Español", "English", "Svenska"],
+      ["Español", "English", "Polski"],
+      ["Español", "Català"],
+      ["Español", "Euskera"],
+      ["Español", "Galego"],
+      ["Español", "English", "Português", "Français"],
+      ["Español", "English", "Deutsch", "Italiano"]
+    ];
+    
+    const availabilityPatterns = [
+      ["Lunes"],
+      ["Martes"],
+      ["Miércoles"],
+      ["Jueves"],
+      ["Viernes"],
+      ["Sábado"],
+      ["Domingo"],
+      ["Lunes", "Miércoles"],
+      ["Martes", "Jueves"],
+      ["Miércoles", "Viernes"],
+      ["Jueves", "Sábado"],
+      ["Viernes", "Domingo"],
+      ["Sábado", "Domingo"],
+      ["Lunes", "Miércoles", "Viernes"],
+      ["Martes", "Jueves", "Sábado"],
+      ["Lunes", "Martes", "Miércoles"],
+      ["Jueves", "Viernes", "Sábado"],
+      ["Viernes", "Sábado", "Domingo"],
+      ["Lunes", "Miércoles", "Viernes", "Domingo"],
+      ["Martes", "Jueves", "Sábado", "Domingo"],
+      ["Lunes", "Martes", "Miércoles", "Jueves"],
+      ["Miércoles", "Jueves", "Viernes", "Sábado"],
+      ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"],
+      ["Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
+      ["Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"],
+      ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"],
+      ["Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"],
+      ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"]
+    ];
+    
     const specialtiesList = [
       ["Arte", "Museos", "Galerías"], 
       ["Historia", "Arquitectura", "Monumentos"], 
@@ -78,43 +162,48 @@ const allGuides: Guide[] = [
       ["Cultura Local", "Tradiciones", "Festivales"],
       ["Compras", "Artesanías", "Souvenirs"],
       ["Vida Nocturna", "Bares", "Discotecas"],
-      ["Familia", "Niños", "Actividades familiares"]
+      ["Familia", "Niños", "Actividades familiares"],
+      ["Deportes", "Aventura", "Actividades extremas"],
+      ["Espiritualidad", "Templos", "Peregrinación"],
+      ["Literatura", "Rutas literarias", "Bibliotecas"],
+      ["Ciencia", "Museos científicos", "Tecnología"],
+      ["Vinos", "Bodegas", "Catas"],
+      ["Playas", "Deportes acuáticos", "Costa"],
+      ["Montaña", "Escalada", "Esquí"],
+      ["Turismo rural", "Granjas", "Ecoturismo"],
+      ["Moda", "Diseño", "Tendencias"],
+      ["Medicina tradicional", "Spa", "Wellness"],
+      ["Negocios", "Networking", "Empresarial"],
+      ["Estudiantes", "Intercambio", "Universidad"],
+      ["LGBTQ+", "Comunidad", "Inclusión"],
+      ["Accesibilidad", "Turismo adaptado", "Inclusivo"],
+      ["Lujo", "Experiencias premium", "VIP"]
     ];
-    const languages = [
-      ["Español", "English"],
-      ["Español", "English", "Français"],
-      ["Español", "English", "Deutsch"],
-      ["Español", "English", "Italiano"],
-      ["Español", "English", "Português"],
-      ["Español", "English", "中文"],
-      ["Español", "English", "日本語"],
-      ["Español", "English", "Русский"]
-    ];
-    const days = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
     
-    const cityIndex = (index + 6) % cities.length;
-    const nameIndex = (index + 6) % names.length;
-    const surnameIndex = (index + 6) % surnames.length;
-    const specialtyIndex = (index + 6) % specialtiesList.length;
-    const languageIndex = (index + 6) % languages.length;
-    const imageIndex = (index + 6) % 2;
+    const cityIndex = index % cities.length;
+    const nameIndex = index % names.length;
+    const surnameIndex = (index + 17) % surnames.length;
+    const languageIndex = index % languageCombinations.length;
+    const availabilityIndex = index % availabilityPatterns.length;
+    const specialtyIndex = index % specialtiesList.length;
+    const imageIndex = index % 2;
     
     return {
       id: `${index + 7}`,
       name: `${names[nameIndex]} ${surnames[surnameIndex]}`,
-      rating: Number((4.2 + Math.random() * 0.8).toFixed(1)),
-      totalReviews: Math.floor(Math.random() * 200) + 20,
+      rating: Number((4.0 + Math.random() * 1.0).toFixed(1)),
+      totalReviews: Math.floor(Math.random() * 300) + 15,
       location: cities[cityIndex],
-      availableDays: days.slice(0, Math.floor(Math.random() * 4) + 2),
-      languages: languages[languageIndex],
+      availableDays: availabilityPatterns[availabilityIndex],
+      languages: languageCombinations[languageIndex],
       specialties: specialtiesList[specialtyIndex],
-      biography: `Guía profesional especializado en ${specialtiesList[specialtyIndex].join(", ").toLowerCase()} con años de experiencia en ${cities[cityIndex]}.`,
+      biography: `Guía ${languageCombinations[languageIndex].length > 2 ? 'multilingüe' : 'profesional'} especializado en ${specialtiesList[specialtyIndex].join(", ").toLowerCase()} en ${cities[cityIndex]}. Disponible ${availabilityPatterns[availabilityIndex].join(", ")}.`,
       profileImage: imageIndex === 0 ? guide1Image : guide2Image,
-      locationImages: [location1Image, location2Image, location3Image, location4Image].slice(0, Math.floor(Math.random() * 3) + 1),
-      pricePerHour: Math.floor(Math.random() * 30) + 25,
-      responseTime: ["30 minutos", "1 hora", "2 horas", "3 horas"][Math.floor(Math.random() * 4)],
-      isVerified: Math.random() > 0.2,
-      yearsExperience: Math.floor(Math.random() * 10) + 2
+      locationImages: [location1Image, location2Image, location3Image, location4Image].slice(0, Math.floor(Math.random() * 4) + 1),
+      pricePerHour: Math.floor(Math.random() * 40) + 20,
+      responseTime: ["15 minutos", "30 minutos", "1 hora", "2 horas", "3 horas"][Math.floor(Math.random() * 5)],
+      isVerified: Math.random() > 0.15,
+      yearsExperience: Math.floor(Math.random() * 15) + 1
     };
   })
 ];
