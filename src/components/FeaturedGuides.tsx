@@ -94,7 +94,6 @@ const allGuides: Guide[] = [
     ];
     
     const languageCombinations = [
-      ["Español"],
       ["Español", "English"],
       ["Español", "English", "Français"],
       ["Español", "English", "Deutsch"],
@@ -103,6 +102,7 @@ const allGuides: Guide[] = [
       ["Español", "Français"],
       ["Español", "Deutsch"],
       ["Español", "Italiano"],
+      ["Español", "Português"],
       ["Español", "English", "中文"],
       ["Español", "English", "日本語"],
       ["Español", "English", "Русский"],
@@ -118,7 +118,32 @@ const allGuides: Guide[] = [
       ["Español", "Euskera"],
       ["Español", "Galego"],
       ["Español", "English", "Português", "Français"],
-      ["Español", "English", "Deutsch", "Italiano"]
+      ["Español", "English", "Deutsch", "Italiano"],
+      ["Español", "Français", "Deutsch"],
+      ["Español", "Italiano", "Português"],
+      ["English", "Français", "Italiano"],
+      ["Español", "English", "Türkçe"],
+      ["Español", "English", "Ελληνικά"],
+      ["Español", "Català", "Français"],
+      ["Español", "Euskera", "English"],
+      ["Español", "Galego", "Português"],
+      ["English", "Deutsch", "Nederlands"],
+      ["Français", "Italiano", "English"],
+      ["Português", "English", "Español"],
+      ["Español", "English", "Norsk"],
+      ["Español", "English", "Dansk"],
+      ["Español", "English", "Suomi"],
+      ["Español", "English", "Magyar"],
+      ["Español", "English", "Čeština"],
+      ["Español", "English", "Slovenčina"],
+      ["Español", "English", "Hrvatski"],
+      ["Español", "English", "Srpski"],
+      ["Español", "English", "Română"],
+      ["Español", "English", "Български"],
+      ["Español", "English", "Lietuvių"],
+      ["Español", "English", "Latviešu"],
+      ["Español", "English", "Eesti"],
+      ["Español", "English", "Malti"]
     ];
     
     const availabilityPatterns = [
