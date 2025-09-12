@@ -8,9 +8,14 @@ import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import { cn } from "@/lib/utils";
+import location1 from "@/assets/location-1.jpg";
+import location2 from "@/assets/location-2.jpg";
+import location3 from "@/assets/location-3.jpg";
+import location4 from "@/assets/location-4.jpg";
 
 const cities = [
   "Barcelona", "Madrid", "Sevilla", "Valencia", "Granada", 
@@ -69,8 +74,37 @@ export default function SearchForm({ onSearch }: SearchFormProps) {
     !selectedInterests.includes(interest)
   );
 
+  const carouselImages = [
+    { src: location1, alt: "Destino turístico 1" },
+    { src: location2, alt: "Destino turístico 2" },
+    { src: location3, alt: "Destino turístico 3" },
+    { src: location4, alt: "Destino turístico 4" }
+  ];
+
   return (
-    <Card className="p-8 bg-surface/95 backdrop-blur-sm border-card-border shadow-card">
+    <div className="space-y-6">
+      {/* Carrusel de imágenes */}
+      <Carousel className="w-full max-w-4xl mx-auto">
+        <CarouselContent>
+          {carouselImages.map((image, index) => (
+            <CarouselItem key={index}>
+              <div className="relative h-48 md:h-64 rounded-lg overflow-hidden">
+                <img 
+                  src={image.src} 
+                  alt={image.alt}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious className="left-2" />
+        <CarouselNext className="right-2" />
+      </Carousel>
+
+      {/* Formulario de búsqueda */}
+      <Card className="p-8 bg-surface/95 backdrop-blur-sm border-card-border shadow-card">
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold text-foreground mb-2">
@@ -217,5 +251,6 @@ export default function SearchForm({ onSearch }: SearchFormProps) {
         </Button>
       </form>
     </Card>
+    </div>
   );
 }
