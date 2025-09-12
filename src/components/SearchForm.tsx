@@ -19,7 +19,12 @@ import location4 from "@/assets/location-4.jpg";
 
 const cities = [
   "Barcelona", "Madrid", "Sevilla", "Valencia", "Granada", 
-  "Bilbao", "San Sebastián", "Toledo", "Córdoba", "Salamanca"
+  "Bilbao", "San Sebastián", "Toledo", "Córdoba", "Salamanca",
+  // Ciudades del Tolima, Colombia
+  "Ibagué", "Espinal", "Girardot", "Melgar", "Honda",
+  "Líbano", "Chaparral", "Purificación", "Flandes", "Mariquita",
+  "Fresno", "Cajamarca", "Rovira", "Ortega", "Guamo",
+  "Saldaña", "Ambalema", "Venadillo", "Armero-Guayabal", "Piedras"
 ];
 
 const languages = [
