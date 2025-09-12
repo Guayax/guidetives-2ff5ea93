@@ -153,6 +153,101 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Guías Destacados */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">
+              Guías Destacados
+            </h2>
+            <p className="text-xl text-foreground-muted max-w-2xl mx-auto">
+              Conoce a algunos de nuestros guías más experimentados
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-surface rounded-lg shadow-card overflow-hidden">
+              {/* Header */}
+              <div className="bg-primary/5 px-6 py-4 border-b">
+                <div className="grid grid-cols-3 gap-4 font-semibold text-foreground">
+                  <div>Nombre</div>
+                  <div>Especialidades</div>
+                  <div>Rating</div>
+                </div>
+              </div>
+
+              {/* Filas de guías */}
+              <div className="divide-y divide-border">
+                <div className="px-6 py-4 hover:bg-accent/5 transition-colors">
+                  <div className="grid grid-cols-3 gap-4 items-center">
+                    <div className="font-medium text-foreground">María González</div>
+                    <div className="text-foreground-muted">Gastronomía, Historia</div>
+                    <div className="flex items-center gap-1">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <span key={star} className={`text-sm ${star <= 5 ? 'text-yellow-400' : 'text-gray-300'}`}>★</span>
+                      ))}
+                      <span className="ml-2 text-sm text-foreground-muted">(5.0)</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="px-6 py-4 hover:bg-accent/5 transition-colors">
+                  <div className="grid grid-cols-3 gap-4 items-center">
+                    <div className="font-medium text-foreground">Carlos Ramírez</div>
+                    <div className="text-foreground-muted">Aventura, Naturaleza</div>
+                    <div className="flex items-center gap-1">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <span key={star} className={`text-sm ${star <= 4 ? 'text-yellow-400' : 'text-gray-300'}`}>★</span>
+                      ))}
+                      <span className="ml-2 text-sm text-foreground-muted">(4.8)</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="px-6 py-4 hover:bg-accent/5 transition-colors">
+                  <div className="grid grid-cols-3 gap-4 items-center">
+                    <div className="font-medium text-foreground">Ana López</div>
+                    <div className="text-foreground-muted">Arte, Cultura</div>
+                    <div className="flex items-center gap-1">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <span key={star} className={`text-sm ${star <= 5 ? 'text-yellow-400' : 'text-gray-300'}`}>★</span>
+                      ))}
+                      <span className="ml-2 text-sm text-foreground-muted">(4.9)</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="px-6 py-4 hover:bg-accent/5 transition-colors">
+                  <div className="grid grid-cols-3 gap-4 items-center">
+                    <div className="font-medium text-foreground">Pedro Silva</div>
+                    <div className="text-foreground-muted">Arquitectura, Fotografía</div>
+                    <div className="flex items-center gap-1">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <span key={star} className={`text-sm ${star <= 4 ? 'text-yellow-400' : 'text-gray-300'}`}>★</span>
+                      ))}
+                      <span className="ml-2 text-sm text-foreground-muted">(4.7)</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="px-6 py-4 hover:bg-accent/5 transition-colors">
+                  <div className="grid grid-cols-3 gap-4 items-center">
+                    <div className="font-medium text-foreground">Isabel Torres</div>
+                    <div className="text-foreground-muted">Compras, Vida Nocturna</div>
+                    <div className="flex items-center gap-1">
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <span key={star} className={`text-sm ${star <= 4 ? 'text-yellow-400' : 'text-gray-300'}`}>★</span>
+                      ))}
+                      <span className="ml-2 text-sm text-foreground-muted">(4.6)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
