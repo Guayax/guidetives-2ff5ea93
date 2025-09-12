@@ -43,8 +43,9 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-hero opacity-80"></div>
         </div>
 
-        {/* Brand text */}
-        <div className="absolute top-6 right-6 z-20">
+        {/* Brand logo and text */}
+        <div className="absolute top-6 left-6 z-20 flex items-center gap-2">
+          <Compass className="w-6 h-6 text-surface/70" />
           <span className="text-surface/70 text-sm font-medium tracking-wide">
             guidetives
           </span>
