@@ -10,64 +10,8 @@ import location2Image from "@/assets/location-2.jpg";
 import location3Image from "@/assets/location-3.jpg";
 import location4Image from "@/assets/location-4.jpg";
 
-// Guías destacados (selección de los mejores)
-const featuredGuides: Guide[] = [
-  {
-    id: "1",
-    name: "María González",
-    rating: 4.9,
-    totalReviews: 127,
-    location: "Barcelona",
-    availableDays: ["Lunes", "Miércoles", "Viernes", "Sábado"],
-    languages: ["Español", "English", "Français"],
-    specialties: ["Arte", "Arquitectura", "Gastronomía", "Historia", "Fotografía"],
-    biography: "Soy una guía local apasionada con más de 8 años de experiencia mostrando los secretos mejor guardados de Barcelona. Me especializo en arte contemporáneo y gastronomía catalana, y conozco todos los rincones fotogénicos de la ciudad.",
-    profileImage: guide1Image,
-    locationImages: [location1Image, location3Image, location4Image],
-    pricePerHour: 45,
-    responseTime: "2 horas",
-    isVerified: true,
-    yearsExperience: 8
-  },
-  {
-    id: "5",
-    name: "Laura Fernández",
-    rating: 4.9,
-    totalReviews: 203,
-    location: "Granada",
-    availableDays: ["Lunes", "Jueves", "Sábado"],
-    languages: ["Español", "English", "العربية"],
-    specialties: ["Alhambra", "Historia", "Arquitectura", "Jardines"],
-    biography: "Historiadora del arte especializada en patrimonio andalusí con más de 10 años guiando por la Alhambra y el Albaicín.",
-    profileImage: guide1Image,
-    locationImages: [location1Image, location3Image, location4Image],
-    pricePerHour: 50,
-    responseTime: "30 minutos",
-    isVerified: true,
-    yearsExperience: 10
-  },
-  {
-    id: "25",
-    name: "Natalia Gómez",
-    rating: 4.9,
-    totalReviews: 201,
-    location: "Guamo",
-    availableDays: ["Lunes", "Martes", "Miércoles"],
-    languages: ["Español", "English"],
-    specialties: ["Gastronomía", "Mercados", "Cultura Local", "Artesanías"],
-    biography: "Nutricionista especializada en gastronomía tradicional tolimense con experiencia en tours gastronómicos únicos.",
-    profileImage: guide1Image,
-    locationImages: [location4Image, location1Image, location3Image],
-    pricePerHour: 38,
-    responseTime: "30 minutos",
-    isVerified: true,
-    yearsExperience: 8
-  }
-];
-
-// Todos los guías disponibles (importados desde GuideResults)
+// Todos los guías disponibles
 const allGuides: Guide[] = [
-  ...featuredGuides,
   {
     id: "2", 
     name: "Carlos Martín",
@@ -119,24 +63,60 @@ const allGuides: Guide[] = [
     isVerified: true,
     yearsExperience: 4
   },
-  // Agregar más guías aquí...
-  {
-    id: "6",
-    name: "Pedro Sánchez",
-    rating: 4.5,
-    totalReviews: 92,
-    location: "Ibagué",
-    availableDays: ["Martes", "Viernes", "Sábado"],
-    languages: ["Español", "English"],
-    specialties: ["Música", "Folclore", "Conservatorio", "Festivales"],
-    biography: "Músico y folclorista especializado en la cultura musical tolimense.",
-    profileImage: guide2Image,
-    locationImages: [location1Image, location2Image],
-    pricePerHour: 32,
-    responseTime: "2 horas",
-    isVerified: true,
-    yearsExperience: 7
-  }
+  // Generar más guías hasta llegar a ~150
+  ...Array.from({ length: 145 }, (_, index) => {
+    const cities = ["Madrid", "Barcelona", "Sevilla", "Valencia", "Granada", "Bilbao", "Salamanca", "Toledo", "Córdoba", "Cádiz", "Málaga", "Zaragoza", "Murcia", "Palma", "Las Palmas", "Santander", "Oviedo", "Pamplona", "Vitoria", "Logroño", "Ibagué", "Guamo", "Espinal", "Melgar", "Honda"];
+    const names = ["María", "Carlos", "Ana", "Diego", "Laura", "Pedro", "Carmen", "Francisco", "Isabel", "Alejandro", "Pilar", "Manuel", "Rosa", "Antonio", "Dolores", "José", "Concepción", "Ángel", "Josefa", "Jesús"];
+    const surnames = ["García", "Rodríguez", "González", "Fernández", "López", "Martínez", "Sánchez", "Pérez", "Gómez", "Martín", "Jiménez", "Ruiz", "Hernández", "Díaz", "Moreno", "Muñoz", "Álvarez", "Romero", "Alonso", "Gutiérrez"];
+    const specialtiesList = [
+      ["Arte", "Museos", "Galerías"], 
+      ["Historia", "Arquitectura", "Monumentos"], 
+      ["Gastronomía", "Mercados", "Restaurantes"], 
+      ["Flamenco", "Música", "Danza"], 
+      ["Naturaleza", "Senderismo", "Parques"],
+      ["Fotografía", "Tours fotográficos", "Paisajes"],
+      ["Cultura Local", "Tradiciones", "Festivales"],
+      ["Compras", "Artesanías", "Souvenirs"],
+      ["Vida Nocturna", "Bares", "Discotecas"],
+      ["Familia", "Niños", "Actividades familiares"]
+    ];
+    const languages = [
+      ["Español", "English"],
+      ["Español", "English", "Français"],
+      ["Español", "English", "Deutsch"],
+      ["Español", "English", "Italiano"],
+      ["Español", "English", "Português"],
+      ["Español", "English", "中文"],
+      ["Español", "English", "日本語"],
+      ["Español", "English", "Русский"]
+    ];
+    const days = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+    
+    const cityIndex = (index + 6) % cities.length;
+    const nameIndex = (index + 6) % names.length;
+    const surnameIndex = (index + 6) % surnames.length;
+    const specialtyIndex = (index + 6) % specialtiesList.length;
+    const languageIndex = (index + 6) % languages.length;
+    const imageIndex = (index + 6) % 2;
+    
+    return {
+      id: `${index + 7}`,
+      name: `${names[nameIndex]} ${surnames[surnameIndex]}`,
+      rating: Number((4.2 + Math.random() * 0.8).toFixed(1)),
+      totalReviews: Math.floor(Math.random() * 200) + 20,
+      location: cities[cityIndex],
+      availableDays: days.slice(0, Math.floor(Math.random() * 4) + 2),
+      languages: languages[languageIndex],
+      specialties: specialtiesList[specialtyIndex],
+      biography: `Guía profesional especializado en ${specialtiesList[specialtyIndex].join(", ").toLowerCase()} con años de experiencia en ${cities[cityIndex]}.`,
+      profileImage: imageIndex === 0 ? guide1Image : guide2Image,
+      locationImages: [location1Image, location2Image, location3Image, location4Image].slice(0, Math.floor(Math.random() * 3) + 1),
+      pricePerHour: Math.floor(Math.random() * 30) + 25,
+      responseTime: ["30 minutos", "1 hora", "2 horas", "3 horas"][Math.floor(Math.random() * 4)],
+      isVerified: Math.random() > 0.2,
+      yearsExperience: Math.floor(Math.random() * 10) + 2
+    };
+  })
 ];
 
 export default function FeaturedGuides() {
@@ -147,20 +127,20 @@ export default function FeaturedGuides() {
     alert(`Redirigiendo al chat con el guía...`);
   };
 
-  const guidesToShow = showAllGuides ? allGuides : featuredGuides;
-
   return (
     <div className="space-y-8">
-      {/* Grid de guías */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
-        {guidesToShow.map((guide) => (
-          <GuideCard
-            key={guide.id}
-            guide={guide}
-            onContact={handleContact}
-          />
-        ))}
-      </div>
+      {/* Mostrar guías solo cuando se presiona el botón */}
+      {showAllGuides && (
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+          {allGuides.map((guide) => (
+            <GuideCard
+              key={guide.id}
+              guide={guide}
+              onContact={handleContact}
+            />
+          ))}
+        </div>
+      )}
 
       {/* Botón para mostrar todos los guías */}
       <div className="text-center">
@@ -170,7 +150,7 @@ export default function FeaturedGuides() {
           size="lg"
           className="bg-surface border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
         >
-          {showAllGuides ? "Mostrar solo destacados" : `Ver todos los guías (${allGuides.length} disponibles)`}
+          {showAllGuides ? "Ocultar guías" : `Ver todos los guías (${allGuides.length} disponibles)`}
         </Button>
         
         {showAllGuides && (
