@@ -178,7 +178,7 @@ export default function SearchForm({ onSearch }: SearchFormProps) {
           <div className="space-y-2">
             <Label className="flex items-center gap-2 text-foreground font-medium">
               <LanguagesIcon className="w-4 h-4 text-primary" />
-              Idioma del guía
+              Idioma hablado por ti
             </Label>
             <Select value={selectedLanguage} onValueChange={setSelectedLanguage}>
               <SelectTrigger className="bg-surface border-input focus:border-primary focus:ring-2 focus:ring-primary/20">

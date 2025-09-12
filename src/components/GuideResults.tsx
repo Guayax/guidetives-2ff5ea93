@@ -78,11 +78,12 @@ export default function GuideResults({ searchData, onNewSearch }: GuideResultsPr
         return false;
       }
       
-      // Filtrar por intereses
+      // Filtrar por intereses - debe coincidir al menos con uno
       if (searchData.selectedInterests.length > 0) {
         const hasMatchingInterest = searchData.selectedInterests.some(interest =>
           guide.specialties.some(specialty => 
-            specialty.toLowerCase().includes(interest.toLowerCase())
+            specialty.toLowerCase().includes(interest.toLowerCase()) ||
+            interest.toLowerCase().includes(specialty.toLowerCase())
           )
         );
         if (!hasMatchingInterest) return false;

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Compass, Users, Award, Globe } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import SearchForm, { SearchData } from "@/components/SearchForm";
 import GuideResults from "@/components/GuideResults";
 import heroBackground from "@/assets/hero-background.jpg";
@@ -49,6 +50,13 @@ const Index = () => {
           <span className="text-surface/70 text-sm font-medium tracking-wide">
             guidetives
           </span>
+        </div>
+
+        {/* Language selector button */}
+        <div className="absolute top-6 right-6 z-20">
+          <Button variant="outline" className="bg-surface/20 border-surface/30 text-surface hover:bg-surface/30 backdrop-blur-sm">
+            🌐 ES
+          </Button>
         </div>
 
         {/* Content */}
