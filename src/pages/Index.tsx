@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Compass, Users, Award, Globe } from "lucide-react";
+import { Users, Award, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SearchForm, { SearchData } from "@/components/SearchForm";
 import GuideResults from "@/components/GuideResults";
 import heroBackground from "@/assets/hero-background.jpg";
+import guideIcon from "@/assets/guide-icon.png";
 
 const Index = () => {
   const [searchResults, setSearchResults] = useState<SearchData | null>(null);
@@ -46,7 +47,7 @@ const Index = () => {
 
         {/* Brand logo and text */}
         <div className="absolute top-6 left-6 z-20 flex items-center gap-2">
-          <Compass className="w-6 h-6 text-surface/70" />
+          <img src={guideIcon} alt="GuiDeTives" className="w-6 h-6 opacity-70" />
           <span className="text-surface/70 text-sm font-medium tracking-wide">
             guidetives
           </span>
@@ -80,7 +81,7 @@ const Index = () => {
 
         {/* Floating Elements */}
         <div className="absolute top-20 left-10 text-surface/20 animate-float">
-          <Compass className="w-16 h-16" />
+          <img src={guideIcon} alt="Guide" className="w-16 h-16 opacity-20" />
         </div>
         <div className="absolute bottom-20 right-10 text-surface/20 animate-float" style={{ animationDelay: '1s' }}>
           <Globe className="w-12 h-12" />
