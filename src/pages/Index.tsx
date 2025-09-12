@@ -80,9 +80,6 @@ const Index = () => {
         </div>
 
         {/* Floating Elements */}
-        <div className="absolute top-20 left-10 text-surface/20 animate-float">
-          <img src={guideIcon} alt="Guide" className="w-16 h-16 opacity-20" />
-        </div>
         <div className="absolute bottom-20 right-10 text-surface/20 animate-float" style={{ animationDelay: '1s' }}>
           <Globe className="w-12 h-12" />
         </div>
