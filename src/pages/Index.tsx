@@ -43,6 +43,13 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-hero opacity-80"></div>
         </div>
 
+        {/* Brand text */}
+        <div className="absolute top-6 right-6 z-20">
+          <span className="text-surface/70 text-sm font-medium tracking-wide">
+            guidetives
+          </span>
+        </div>
+
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4 py-16">
           <div className="text-center mb-12 animate-fade-in">
