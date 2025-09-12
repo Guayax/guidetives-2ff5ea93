@@ -84,10 +84,17 @@ export default function SearchForm({ onSearch }: SearchFormProps) {
   return (
     <div className="space-y-6">
       {/* Carrusel de imágenes */}
-      <Carousel className="w-full max-w-4xl mx-auto">
-        <CarouselContent>
+      <Carousel 
+        className="w-full max-w-4xl mx-auto"
+        opts={{
+          align: "center",
+          loop: true,
+          containScroll: "trimSnaps"
+        }}
+      >
+        <CarouselContent className="-ml-2 md:-ml-4">
           {carouselImages.map((image, index) => (
-            <CarouselItem key={index}>
+            <CarouselItem key={index} className="pl-2 md:pl-4 basis-4/5 md:basis-3/4">
               <div className="relative h-48 md:h-64 rounded-lg overflow-hidden">
                 <img 
                   src={image.src} 
