@@ -3,6 +3,7 @@ import { Users, Award, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SearchForm, { SearchData } from "@/components/SearchForm";
 import GuideResults from "@/components/GuideResults";
+import FeaturedGuides from "@/components/FeaturedGuides";
 import heroBackground from "@/assets/hero-background.jpg";
 import guideIcon from "@/assets/guide-icon.png";
 
@@ -131,6 +132,22 @@ const Index = () => {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Guías Destacados Section */}
+      <section className="py-20 bg-surface">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">
+              Guías Destacados
+            </h2>
+            <p className="text-xl text-foreground-muted max-w-2xl mx-auto">
+              Conoce a algunos de nuestros guías más populares y experimentados
+            </p>
+          </div>
+          
+          <FeaturedGuides />
         </div>
       </section>
 
