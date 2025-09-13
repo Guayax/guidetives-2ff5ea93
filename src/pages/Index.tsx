@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import SearchForm, { SearchData } from "@/components/SearchForm";
 import GuideResults from "@/components/GuideResults";
 import FeaturedGuides from "@/components/FeaturedGuides";
+import BecomeGuideForm from "@/components/BecomeGuideForm";
 import heroBackground from "@/assets/hero-background.jpg";
 import guideIcon from "@/assets/guide-icon.png";
 
@@ -269,6 +270,19 @@ const Index = () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Become a Guide Section */}
+      <section className="py-20 bg-gradient-primary">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-surface mb-6">
+            ¿Deseas volverte un guía?
+          </h2>
+          <p className="text-xl text-surface/90 mb-8 max-w-2xl mx-auto">
+            Comparte tu conocimiento local y ayuda a otros viajeros a descubrir los secretos de tu ciudad
+          </p>
+          <BecomeGuideForm />
         </div>
       </section>
     </div>
