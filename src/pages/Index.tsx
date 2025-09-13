@@ -48,9 +48,9 @@ const Index = () => {
         </div>
 
         {/* Brand logo and text */}
-        <div className="absolute top-6 left-6 z-20 flex items-center gap-2">
-          <img src={guideIcon} alt="GuiDeTives" className="w-6 h-6 opacity-70" />
-          <span className="text-surface/70 text-sm font-medium tracking-wide">
+        <div className="absolute top-6 left-6 z-20 flex items-center gap-3">
+          <img src={guideIcon} alt="GuiDeTives" className="w-10 h-10 opacity-70" />
+          <span className="text-surface/70 text-lg font-medium tracking-wide">
             guidetives
           </span>
         </div>
