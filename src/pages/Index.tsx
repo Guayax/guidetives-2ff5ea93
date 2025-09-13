@@ -279,7 +279,7 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">
             ¿Deseas volverte un guía?
           </h2>
-          <p className="text-xl text-surface/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-black mb-8 max-w-2xl mx-auto">
             Comparte tu conocimiento local y ayuda a otros viajeros a descubrir los secretos de tu ciudad
           </p>
           <BecomeGuideForm />
