@@ -67,7 +67,7 @@ const Index = () => {
           <div className="text-center mb-12 animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-bold text-surface mb-6 drop-shadow-lg">
               Descubre el Mundo
-              <span className="block text-accent-light">con Guías Locales</span>
+              <span className="block text-accent-light">con tus gustos</span>
             </h1>
             <p className="text-xl md:text-2xl text-surface/90 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
               Conecta con guías expertos que conocen los secretos mejor guardados de cada destino. 
